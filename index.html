@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Helium</title>
+</head>
+<img height="100px" src="logo_wide.png"/>
+<h1>Client</h1>
+<p>You can download the source code for the client here:
+<a href="https://github.com/MTUCappuccino/Helium">https://github.com/MTUCappuccino/Helium</a></p>
+<p>To build, open a command line and type <code>ant</code>. You should be able to launch the
+    executable jar like any other java application.</p>
+<p>If the server is running, enter the address and port of the server, as
+well as a handle and a password (if required). Press connect. You should now
+be able to send messages and receive messages. </p>
+<h1>Server</h1>
+<p>You can download the source code for the server here:
+<a href="https://github.com/MTUCappuccino/Helium_Server">https://github.com/MTUCappuccino/Helium_Server</a></p>
+<p>To build, open a command line and type <code>ant</code>.
+    You need to launch the server from the command line by
+    using <code>java -jar Helium_Server.jar</code>.
+<h2>Commands:</h2>
+<p><b>make</b> - starts a new server. The server will ask the following questions:</p>
+<ul>
+    <li>Port to open</li>
+    <li>Server Name</li>
+    <li>Password entry?(Y/N)</li>
+    <li>Password (if you answered yes above)</li>
+</ul>
+<p>There is currently no way to gracefully close the server. Use Ctrl+C to force quit.</p>
+<h2>Known issues:</h2>
+<ul>
+    <li>The server crashes if a client disconnects</li>
+    <li>There is no error handling if the user inputs invalid arguments</li>
+</ul>
+
+</html>
