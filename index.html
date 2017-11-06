@@ -8,9 +8,12 @@
 <a href="https://github.com/MTUCappuccino/Helium">https://github.com/MTUCappuccino/Helium</a></p>
 <p>To build, open a command line and type <code>ant</code>. You should be able to launch the
     executable jar like any other java application.</p>
-<p>If the server is running, enter the address and port of the server, as
+<p>Click the plus button (or "Add Server"). If the server is running, enter the address and port of the server, as
 well as a handle and a password (if required). Press connect. You should now
 be able to send messages and receive messages. </p>
+<p>Type a message in the message window and press enter to send.</p>
+<p>Click the image button to open a file explorer to find and image to send. (Not fully implemented yet.)</p>
+<p>The sidebar is a work in progress and doesn't fully respresent the data of the current server.</p>
 <h1>Server</h1>
 <p>You can download the source code for the server here:
 <a href="https://github.com/MTUCappuccino/Helium_Server">https://github.com/MTUCappuccino/Helium_Server</a></p>
@@ -24,12 +27,25 @@ be able to send messages and receive messages. </p>
     <li>Server Name</li>
     <li>Password entry?(Y/N)</li>
     <li>Password (if you answered yes above)</li>
+    <li>Preset Server color (Program will prompt options)</li>
+    <li>HEX Color code (if you answered no above)</li>
+    <li>Custom Icon URL(Y/N)</li>
+    <li>URL if you answered yes above</li>
 </ul>
-<p>There is currently no way to gracefully close the server. Use Ctrl+C to force quit.</p>
+<p><b>shutdown</b> - stops the server.</p>
+<p><b>help</b> - shows help text</p>
+<p><b>edit</b> - change configurable options (name, color, icon)</p>
 <h2>Known issues:</h2>
 <ul>
-    <li>The server crashes if a client disconnects</li>
-    <li>There is no error handling if the user inputs invalid arguments</li>
+    <li>Messages containing a \n character may behave unpredicatably and crash the server.</li>
+    <li>The server may crash if a client disconnects during the initial handshake.</li>
 </ul>
+<h1>Central Server</h1>
+<p>The code for the central server is located here:
+    <a href="https://github.com/MTUCappuccino/Helium_Central_Server">https://github.com/MTUCappuccino/Helium_Central_Server</a></p>
+<p>You can run the central server as described above, but it will not be at the IP address
+    that the client expects it to be at. Currently, we have no dedicated system that runs the
+        central server full time. This will be fixed in the next sprint.</p>
+</p>
 
 </html>
