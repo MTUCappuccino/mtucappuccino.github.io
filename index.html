@@ -10,10 +10,16 @@
     executable jar like any other java application.</p>
 <p>Click the plus button (or "Add Server"). If the server is running, enter the address and port of the server, as
 well as a handle and a password (if required). Press connect. You should now
-be able to send messages and receive messages. </p>
+be able to send messages and receive messages. You can also add a server by code if the server is
+registered with the central server. Contact the server vendor for a join code.</p>
 <p>Type a message in the message window and press enter to send.</p>
-<p>Click the image button to open a file explorer to find and image to send. (Not fully implemented yet.)</p>
-<p>The sidebar is a work in progress and doesn't fully respresent the data of the current server.</p>
+<p>Click the image button to open a file explorer to find and image to send.</p>
+<p>You can click the sidebar button to view server information as well as the leave server button. The Edit
+  handle button is not fully implemented server-side. This also is where you can change notification settings.</p>
+  <p>To send an at-mention, type "@" followed by the handle of the user you want to mention. They
+    will then be notified directly if they have at-mention notifications enabled</p>
+<p>Clicking the Bookmarks button will open a list of all the bookmarked messages. Clicking the button
+    again will go back to all of the messages. To bookmark a message, right click it and then click Bookmark</p>
 <h1>Server</h1>
 <p>You can download the source code for the server here:
 <a href="https://github.com/MTUCappuccino/Helium_Server">https://github.com/MTUCappuccino/Helium_Server</a></p>
@@ -41,11 +47,14 @@ be able to send messages and receive messages. </p>
     <li>The server may crash if a client disconnects during the initial handshake.</li>
 </ul>
 <h1>Central Server</h1>
-<p>The code for the central server is located here:
-    <a href="https://github.com/MTUCappuccino/Helium_Central_Server">https://github.com/MTUCappuccino/Helium_Central_Server</a></p>
+<p>The code for the central server is located here:    <a href="https://github.com/MTUCappuccino/Helium_Central_Server">https://github.com/MTUCappuccino/Helium_Central_Server</a></p>
 <p>You can run the central server as described above, but it will not be at the IP address
-    that the client expects it to be at. Currently, we have no dedicated system that runs the
-        central server full time. This will be fixed in the next sprint.</p>
-</p>
+    that the client and server expect it to be at.</p>
+<p>We have a raspberry pi running the central server waiting for client and server connections.
+  The servers can register with this server and will be provided with a 5 character code.
+  This same server also services clients who wish to translate the code into a usable
+  server URL and port.</p>
+  <p>The central server was also intended to maintain a listing of publically available servers,
+    but we did not get to implementing this feature.</p>
 
 </html>
