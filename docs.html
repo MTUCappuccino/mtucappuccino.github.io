@@ -1,0 +1,108 @@
+<html><head>
+<title>Helium</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+        .download {
+        	background: #0a990d;
+        }
+    	.download:hover {
+			background: #27bc2a;
+    	}
+    	.docs {
+			background: #103050;
+		}
+		.docs:hover {
+			background: #255484;
+		}</style>
+</head>
+<body style="
+    margin: 0;
+    text-align: center;
+    background: #eeeeee;
+">
+  <div style="
+      text-align: center;
+      padding: 4.5em;
+      background: #404040;
+  "><img height="150px" src="logo_wide_white.png" style="
+      /* text-align: center; */
+      /* width: 100%; */
+      "></div>
+      <div style="
+    max-width: 900px;
+    display: inline-block;
+    text-align: left;
+    margin: 30px;
+    background: white;
+    padding: 30px;
+    font-family: Lato;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+">
+<h1>Client</h1>
+<p>You can download the source code for the client here:
+<a href="https://github.com/MTUCappuccino/Helium">https://github.com/MTUCappuccino/Helium</a></p>
+<p>To build, open a command line and type <code>ant</code>. You should be able to launch the
+    executable jar like any other java application.</p>
+<p>Click the plus button (or "Add Server"). If the server is running, enter the address and port of the server, as
+well as a handle and a password (if required). Press connect. You should now
+be able to send messages and receive messages. You can also add a server by code if the server is
+registered with the central server. Contact the server vendor for a join code.</p>
+<p>Type a message in the message window and press enter to send.</p>
+<p>Click the image button to open a file explorer to find and image to send.</p>
+<p>You can click the sidebar button to view server information as well as the leave server button. The Edit
+  handle button is not fully implemented server-side. This also is where you can change notification settings.</p>
+  <p>To send an at-mention, type "@" followed by the handle of the user you want to mention. They
+    will then be notified directly if they have at-mention notifications enabled</p>
+<p>Clicking the Bookmarks button will open a list of all the bookmarked messages. Clicking the button
+    again will go back to all of the messages. To bookmark a message, right click it and then click Bookmark</p><h2>Known issues:</h2>
+    <ul>
+        <li>If a server does not require a handle, occasionally the client freaks out.</li>
+        <li>Sometimes if you attempt to rejoin a server or another server after failing
+          to join a prior server, the password/handle screens will not appear. Restart the client to fix.</li>
+    </ul>
+<h1>Server</h1>
+<p>You can download the source code for the server here:
+<a href="https://github.com/MTUCappuccino/Helium_Server">https://github.com/MTUCappuccino/Helium_Server</a></p>
+<p>To build, open a command line and type <code>ant</code>.
+    You need to launch the server from the command line by
+    using <code>java -jar Helium_Server.jar</code>.
+</p><h2>Commands:</h2>
+<p><b>make</b> - starts a new server. The server will ask the following questions:</p>
+<ul>
+    <li>Port to open</li>
+    <li>Server Name</li>
+    <li>Password entry? (Y/N)</li>
+    <li>Generate random password? (Y/N)</li>
+    <li>Password (if you answered yes above)</li>
+    <li>Preset Server color (Program will prompt options)</li>
+    <li>HEX Color code (if you answered no above)</li>
+    <li>Custom Icon URL(Y/N)</li>
+    <li>URL if you answered yes above</li>
+</ul>
+<p><b>edit</b> - change one of the options set in <b>make</b> such as name, color, icon, password, etc.
+The program will prompt for valid inputs and walk you through the process.</p>
+<p><b>kick</b> - will ask for a handle and kick the user with that handle</p>
+<p><b>names</b> - lists all the names of users currently online</p>
+<p><b>register</b> - register this server with the central server. Currently not reversable</p>
+<p><b>short code</b> - returns the 5 character code obtained in the register command</p>
+<p><b>stats</b> - prints some stats about the server</p>
+<p><b>shutdown</b> - stops the server.</p>
+<p><b>help</b> - shows help text</p>
+<h2>Known issues:</h2>
+<ul>
+    <li>Messages containing a \n character may behave unpredicatably and crash the server.</li>
+    <li>The server may crash if a client disconnects during the initial handshake.</li>
+    <li>Sometimes the server crashes if you enter the wrong password several times</li>
+</ul>
+<h1>Central Server</h1>
+<p>The code for the central server is located here:    <a href="https://github.com/MTUCappuccino/Helium_Central_Server">https://github.com/MTUCappuccino/Helium_Central_Server</a></p>
+<p>You can run the central server as described above, but it will not be at the IP address
+    that the client and server expect it to be at.</p>
+<p>We have a raspberry pi running the central server waiting for client and server connections.
+  The servers can register with this server and will be provided with a 5 character code.
+  This same server also services clients who wish to translate the code into a usable
+  server URL and port.</p>
+  <p>The central server was also intended to maintain a listing of publically available servers,
+    but we did not get to implementing this feature.</p><div>
+
+</div></div></body></html>
